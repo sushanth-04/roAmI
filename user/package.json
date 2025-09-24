@@ -1,4 +1,4 @@
-{
+{ "homepage": "https://sushanth-04.github.io/roAmI"
   "name": "user",
   "private": true,
   "version": "0.0.0",
@@ -8,6 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+    "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^1.7.9",
@@ -24,6 +26,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
+    "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
     "vite": "^6.1.0"
   }
