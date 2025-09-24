@@ -1,6 +1,6 @@
 # roAmI
 
-Welcome to roamAI! This project provides a comprehensive travel planning solution, with separate modules for user interactions, car and hotel bookings, and an admin interface, all powered by an AI backend.
+Welcome to roAmI! This project provides a comprehensive travel planning solution, with separate modules for user interactions, car and hotel bookings, and an admin interface, all powered by an AI backend.
 
 ### Prerequisites
 
