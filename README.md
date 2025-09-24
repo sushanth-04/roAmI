@@ -1,4 +1,4 @@
-# roamAI
+# roAmI
 
 Welcome to roamAI! This project provides a comprehensive travel planning solution, with separate modules for user interactions, car and hotel bookings, and an admin interface, all powered by an AI backend.
 
@@ -16,7 +16,7 @@ Follow these steps to get the entire project up and running.
 
 First, clone the repository to your local machine.
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/sushanth-04/roAmI.git
 cd roamAI
 ```
 
@@ -24,7 +24,8 @@ cd roamAI
 ```bash
 pip install -r requirements.txt
 ```
-
+### Update .env file
+Update the .env file with your Gemini API key (https://aistudio.google.com/apikey)
 ### Backend Setup
 ```bash
 cd backend
