@@ -1,0 +1,671 @@
+/* Enhanced Plan CSS with Modern Design */
+
+/* MAIN CONTAINER */
+.plan-main {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+  background-image: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.plan-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(102, 126, 234, 0.02), rgba(240, 147, 251, 0.02));
+  animation: backgroundShimmer 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes backgroundShimmer {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* CONTAINER LAYOUT */
+.plan-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  width: 100%;
+  padding: 2rem;
+  z-index: 2;
+  animation: containerFadeIn 0.8s ease-out;
+}
+
+@keyframes containerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PLAN FORM SECTION */
+.plan-form {
+  flex: 1 1 380px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 40px rgba(0, 150, 136, 0.15),
+    0 8px 16px rgba(0, 150, 136, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 150, 136, 0.1);
+  min-width: 350px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.plan-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00bcd4, #00acc1, #0097a7);
+  border-radius: 20px 20px 0 0;
+}
+
+.plan-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 32px 64px rgba(0, 150, 136, 0.2),
+    0 16px 32px rgba(0, 150, 136, 0.15);
+}
+
+.plan-form h1 {
+  color: #00695c;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #00695c, #00acc1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.01em;
+}
+
+/* PLAN AREA SECTION */
+.plan-area {
+  flex: 1 1 550px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 40px rgba(255, 152, 0, 0.15),
+    0 8px 16px rgba(255, 152, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 152, 0, 0.1);
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.plan-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9800, #f57c00, #e65100);
+  border-radius: 20px 20px 0 0;
+}
+
+.plan-area:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 32px 64px rgba(255, 152, 0, 0.2),
+    0 16px 32px rgba(255, 152, 0, 0.15);
+}
+
+.plan-area h2 {
+  color: #bf360c;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #bf360c, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* FORM STYLING */
+.trip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.trip-form h2 {
+  margin-bottom: 1.5rem;
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #1565c0, #1976d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trip-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #263238;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.trip-form input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e3f2fd;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.trip-form input:focus {
+  border-color: #1976d2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+.trip-form input:hover {
+  border-color: #42a5f5;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* BUTTON STYLING */
+.generate-btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 24px rgba(25, 118, 210, 0.3);
+}
+
+.generate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.generate-btn:hover::before {
+  left: 100%;
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(25, 118, 210, 0.4);
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+}
+
+.generate-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.generate-btn:disabled {
+  background: linear-gradient(135deg, #b0bec5, #90a4ae);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* STATUS MESSAGES */
+.error-message {
+  color: #d32f2f;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 12px 16px;
+  background: rgba(244, 67, 54, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #f44336;
+  animation: shakeError 0.5s ease-in-out;
+}
+
+@keyframes shakeError {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.save-status {
+  color: #2e7d32;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 12px 16px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+  animation: fadeInSuccess 0.5s ease-out;
+}
+
+@keyframes fadeInSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* GENERATED PLAN DISPLAY */
+.generated-plan {
+  background: linear-gradient(135deg, #f8fafc, #ffffff);
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 250px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  box-shadow: 
+    inset 0 2px 8px rgba(102, 126, 234, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(102, 126, 234, 0.1);
+  font-size: 1rem;
+  color: #37474f;
+  line-height: 1.6;
+  font-family: 'Georgia', serif;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.generated-plan:hover {
+  border-color: rgba(102, 126, 234, 0.2);
+  box-shadow: 
+    inset 0 2px 8px rgba(102, 126, 234, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.loader {
+  text-align: center;
+  font-style: italic;
+  color: #546e7a;
+  font-size: 1.1rem;
+  padding: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ACTION BUTTONS */
+.plan-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.save-btn {
+  background: linear-gradient(135deg, #4caf50, #388e3c);
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.3);
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, #388e3c, #2e7d32);
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.3);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(33, 150, 243, 0.4);
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+}
+
+.home-btn {
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+  box-shadow: 0 4px 16px rgba(156, 39, 176, 0.3);
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(156, 39, 176, 0.4);
+  background: linear-gradient(135deg, #7b1fa2, #6a1b9a);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* RESCHEDULE SECTION */
+.reschedule-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(102, 126, 234, 0.1);
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reschedule-section h2 {
+  margin-bottom: 1rem;
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 1.4rem;
+  background: linear-gradient(135deg, #1565c0, #1976d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.reschedule-section textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  padding: 16px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #e3f2fd;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+.reschedule-section textarea:focus {
+  border-color: #1976d2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+.reschedule-section textarea:hover {
+  border-color: #42a5f5;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.reschedule-btn {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.3);
+}
+
+.reschedule-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.reschedule-btn:hover::before {
+  left: 100%;
+}
+
+.reschedule-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 152, 0, 0.4);
+  background: linear-gradient(135deg, #f57c00, #ef6c00);
+}
+
+.reschedule-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.reschedule-btn:disabled {
+  background: linear-gradient(135deg, #e0e0e0, #bdbdbd);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .plan-container {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .plan-form,
+  .plan-area {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .plan-main {
+    padding-top: 60px;
+  }
+  
+  .plan-container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .plan-form,
+  .plan-area {
+    max-width: 100%;
+    flex: 1 1 auto;
+    min-width: unset;
+    padding: 1.5rem;
+  }
+  
+  .plan-actions {
+    justify-content: center;
+  }
+  
+  .btn {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-container {
+    padding: 0.5rem;
+  }
+  
+  .plan-form,
+  .plan-area {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+  
+  .plan-form h1 {
+    font-size: 1.75rem;
+  }
+  
+  .plan-area h2,
+  .trip-form h2,
+  .reschedule-section h2 {
+    font-size: 1.4rem;
+  }
+  
+  .generated-plan {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+  
+  .plan-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* ACCESSIBILITY IMPROVEMENTS */
+.btn:focus,
+.generate-btn:focus,
+.reschedule-btn:focus,
+.trip-form input:focus,
+.reschedule-section textarea:focus {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+/* REDUCED MOTION SUPPORT */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* SMOOTH SCROLLING */
+* {
+  scroll-behavior: smooth;
+}
+
+/* PRINT STYLES */
+@media print {
+  .plan-main {
+    background: white;
+    padding-top: 0;
+  }
+  
+  .plan-form,
+  .plan-area {
+    background: white;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .btn,
+  .generate-btn,
+  .reschedule-btn {
+    display: none;
+  }
+}

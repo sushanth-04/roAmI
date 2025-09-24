@@ -1,0 +1,13 @@
+# Testing
+pytest
+
+# Web Framework
+Flask
+Flask-Cors
+
+# AI
+google-generativeai
+
+# Environment & Parsing
+python-dotenv
+beautifulsoup4

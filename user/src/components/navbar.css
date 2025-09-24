@@ -1,0 +1,295 @@
+/* Enhanced Navbar CSS with Modern Design */
+
+.nav-main {
+    width: min(600px, 90%);
+    height: 70px;
+    border-radius: 35px;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      0 2px 16px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 998;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideDown 0.6s ease-out;
+  }
+  
+  .nav-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .nav-main:hover::before {
+    opacity: 0.05;
+  }
+  
+  .nav-main a,
+  .nav-main .active {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .nav-main a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: inherit;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+  }
+  
+  .nav-main a:hover::before {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  
+  .nav-main .active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 
+      0 4px 16px rgba(102, 126, 234, 0.4),
+      0 2px 8px rgba(102, 126, 234, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .nav-main .active::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .nav-main a:hover {
+    color: #667eea;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  }
+  
+  .nav-main .active:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 
+      0 6px 20px rgba(102, 126, 234, 0.5),
+      0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+  
+  /* Underline animation for non-active items */
+  .nav-main a:not(.active)::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+  }
+  
+  .nav-main a:not(.active):hover::after {
+    width: 60%;
+  }
+  
+  /* Ripple effect on click */
+  .nav-main a {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-main a .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+  }
+  
+  @keyframes ripple-animation {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  /* Slide down animation */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-main {
+      width: 95%;
+      height: 60px;
+      top: 80px;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+    
+    .nav-main a,
+    .nav-main .active {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      min-width: 60px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-main {
+      width: 98%;
+      height: 50px;
+      border-radius: 25px;
+      top: 70px;
+      padding: 0 8px;
+    }
+    
+    .nav-main a,
+    .nav-main .active {
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      min-width: 50px;
+    }
+  }
+  
+  /* Enhanced hover states for better UX */
+  .nav-main a:active {
+    transform: translateY(0) scale(0.95);
+    transition: all 0.1s ease;
+  }
+  
+  .nav-main .active:active {
+    transform: translateY(-1px) scale(0.95);
+  }
+  
+  /* Focus states for accessibility */
+  .nav-main a:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+  }
+  
+  /* Smooth scrolling when navbar is present */
+  html {
+    scroll-padding-top: 180px;
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .nav-main {
+      background: rgba(26, 32, 44, 0.95);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-main a {
+      color: #e2e8f0;
+    }
+    
+    .nav-main a:hover {
+      color: #667eea;
+    }
+  }
+  
+  /* Floating animation for subtle movement */
+  @keyframes float {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0px);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-2px);
+    }
+  }
+  
+  .nav-main:hover {
+    animation: float 2s ease-in-out infinite;
+  }
+  
+  /* Icon support (if you want to add icons to nav items) */
+  .nav-main a .nav-icon {
+    margin-right: 6px;
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-main a:hover .nav-icon {
+    transform: scale(1.1);
+  }
+  
+  .nav-main .active .nav-icon {
+    transform: scale(1.05);
+  }
+  
+  /* Notification badge support */
+  .nav-main a .nav-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 71, 87, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+    }
+  }

@@ -1,0 +1,314 @@
+/* Enhanced Header CSS with Modern Design */
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 16px 32px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 16px rgba(0, 0, 0, 0.08);
+  top: 0;
+  z-index: 1000;
+  border-radius: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.header-main:hover::before {
+  opacity: 0.1;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.header-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.header-logo:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.app-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(45deg, #ffffff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.02em;
+  transition: all 0.3s ease;
+}
+
+.app-name:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.header-right {
+  position: relative;
+  animation: slideInRight 0.6s ease-out;
+}
+
+.user-menu {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.user-menu:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.user-menu:hover::before {
+  left: 100%;
+}
+
+.user-menu:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-down {
+  font-size: 0.75rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.8;
+}
+
+.user-menu:hover .arrow-down {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  color: #2d3748;
+  border-radius: 12px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  min-width: 180px;
+  padding: 8px;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  color: #4a5568;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.dropdown-item:hover::before {
+  opacity: 1;
+}
+
+.dropdown-item:active {
+  transform: translateX(2px) scale(0.98);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-main {
+    padding: 12px 20px;
+  }
+  
+  .app-name {
+    font-size: 1.4rem;
+  }
+  
+  .header-logo {
+    height: 36px;
+  }
+  
+  .user-menu {
+    padding: 10px 16px;
+  }
+  
+  .user-name {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    min-width: 140px;
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-main {
+    padding: 10px 16px;
+  }
+  
+  .header-left {
+    gap: 10px;
+  }
+  
+  .app-name {
+    font-size: 1.2rem;
+  }
+  
+  .header-logo {
+    height: 32px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dropdown-menu {
+    background: rgba(26, 32, 44, 0.95);
+    color: #e2e8f0;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .dropdown-item {
+    color: #cbd5e0;
+  }
+  
+  .dropdown-item:hover {
+    background: linear-gradient(135deg, #4a5568, #2d3748);
+    color: white;
+  }
+}
+
+/* Accessibility improvements */
+.user-menu:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.dropdown-item:focus {
+  outline: 2px solid #667eea;
+  outline-offset: -2px;
+}
+
+/* Smooth scrolling when header is sticky */
+html {
+  scroll-padding-top: 80px;
+}

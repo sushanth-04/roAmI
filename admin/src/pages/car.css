@@ -1,0 +1,134 @@
+/* Container for the entire page */
+.car-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .filter-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .provider-filter {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .provider-filter:hover {
+    border-color: #007BFF;
+  }
+  
+  .car-provider-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .car-provider-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .provider-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .cars-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .car-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .car-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .car-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .car-info h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .car-info p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .car-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .car-provider-card {
+      width: 90%;
+    }
+  
+    .car-card {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .car-image {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .provider-filter {
+      width: 100%;
+    }
+  }
+  
