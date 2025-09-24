@@ -1,4 +1,9 @@
 {
+  "homepage": "https://sushanth-04.github.io/roAmI",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
     "lucide-react": "^0.513.0"
   },
